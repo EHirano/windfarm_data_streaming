@@ -3,7 +3,12 @@ import json
 from random import uniform
 import time
 from datetime import datetime
+from dotenv import load_dotenv
+import os
 
+load_dotenv()
+
+print(os.getenv('AWS_ACCESS_KEY_ID'))
 # O ideal, segundo a documentação, seria provisionar uma IAM Role para aplicações efêmeras.
 client = boto3.client('kinesis',
     aws_access_key_id = 'AKIAY24ZCR64F2SAOAF3',
